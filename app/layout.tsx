@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import {Toaster} from "@/components/ui/toaster";
-
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Netflix WC",
-  description: "Creación de una página web de Netflix",
+  title: "WillFlix | Netflix Clone",
+  description: "Creando un clone de Netflix",
 };
 
 export default function RootLayout({
@@ -25,7 +24,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body
