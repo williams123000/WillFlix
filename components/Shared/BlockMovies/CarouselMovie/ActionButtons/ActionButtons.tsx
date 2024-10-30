@@ -8,7 +8,7 @@ import { useLovedFilms } from "@/hooks/use-loved-films";
 
 export function ActionButtons(props: ActionButtonsProps) {
     const { movieId, movie, isMyList } = props;
-    const {addLovedFilm, removeLovedItem, lovedFilmsByUser} = useLovedFilms();
+    const {addLovedFilm, removeLovedItem} = useLovedFilms();
 
 
     const router = useRouter();

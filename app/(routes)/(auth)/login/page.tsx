@@ -2,11 +2,8 @@ import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Terms } from "../components/Terms";
 import { LoginForm } from "./LoginForm";
-import { auth } from "@/auth";
-import { Button } from "@/components/ui/button";
 
 export default async function Loginpage() {
-  const session = await auth();
   return (
     <div>
       <p className="text-3xl font-bold text-left mb-7"> Iniciar sesión </p>

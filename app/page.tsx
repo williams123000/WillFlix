@@ -4,7 +4,6 @@ import { Navbar } from "@/components/Shared/Navbar/Navbar";
 import {SliderVideo} from "./(routes)/(home)/components/SliderVideo";
 import { auth } from "@/auth";
 import { TrendingMovies } from "./(routes)/(home)/components/TrendingMovies";
-import { List } from "lucide-react";
 import { ListMovies } from "./(routes)/(home)/components/ListMovies";
 
 
