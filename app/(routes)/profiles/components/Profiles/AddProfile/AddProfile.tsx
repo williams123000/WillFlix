@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { PlusCircle } from "lucide-react";
-import { FromAddProfile } from "../../FormAddProfile";
+import { FormAddProfile } from "../../FormAddProfile";
 
 export default function AddProfile() {
   const [open, setOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function AddProfile() {
             Añade los diferentes perfiles a tu app
           </DialogDescription>
         </DialogHeader>
-        <FromAddProfile setOpen={setOpen} />
+        <FormAddProfile setOpen={setOpen} />
       </DialogContent>
     </Dialog>
   );

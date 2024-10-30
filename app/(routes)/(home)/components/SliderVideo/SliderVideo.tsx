@@ -1,8 +1,11 @@
+"use client"
+
 import { Info, Play } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
 export function SliderVideo() {
+  
   return (
     <div className="relative w-full -[80vw] md:h-[56.25vw] lg:h-[45vw]">
       <video
