@@ -9,11 +9,11 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 
-import { ActionButtons } from "./ActionButtons";
+import { ActionsButtons } from "./ActionsButtons";
+import { ChaptersInfo } from "./ChaptersInfo";
 
 import { CarouselMovieProps } from "./CarouselMovie.types";
-import { ChaptersInfo } from "./ChaptersInfo";
-import { FilmGenres } from "./FillmGenres";
+import { FilmGenres } from "./FilmGenres";
 
 export function CarouselMovie(props: CarouselMovieProps) {
   const { movies, isMyList } = props;
@@ -50,12 +50,13 @@ export function CarouselMovie(props: CarouselMovieProps) {
                     className="cursor-pointer object-cover transition-all duration-300 shadow-xl w-full rounded-t-lg"
                   />
                   <div className="p-2 shadow-lg">
-                    <ActionButtons
+                    <ActionsButtons
                       movieId={movie.id}
                       movie={movie}
                       isMyList={isMyList}
                     />
-                    <ChaptersInfo age={movie.age} duration={movie.duration}/>
+
+                    <ChaptersInfo age={movie.age} duration={movie.duration} />
 
                     <FilmGenres genres={movie.genre} />
                   </div>

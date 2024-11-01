@@ -1,3 +1,3 @@
-export type FormErrorProps = { 
-    message?: string
-    };
+export type FormErrorProps = {
+  message?: string;
+};

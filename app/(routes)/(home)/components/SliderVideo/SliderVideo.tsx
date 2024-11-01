@@ -1,11 +1,8 @@
-"use client"
-
 import { Info, Play } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
 export function SliderVideo() {
-  
   return (
     <div className="relative w-full -[80vw] md:h-[56.25vw] lg:h-[45vw]">
       <video
@@ -22,12 +19,11 @@ export function SliderVideo() {
       >
         <div className="pt-24 md:pt-0">
           <h2 className="text-2xl md:text-5xl lg:text-8xl font-bold drop-shadow-xl">
-            WILLFLIX
+            FLIXWILL
           </h2>
           <p className="max-w-md mt-2 text-xs md:text-base">
             Plataforma de streaming de películas y series.
-            Disfruta de contenido exclusivo y sin publicidad.
-
+            Disfruta de contenido ilimitado en cualquier lugar y en cualquier momento.
           </p>
           <div className="flex flex-col md:flex-row gap-4 mt-5">
             <Button size="lg" variant="secondary">

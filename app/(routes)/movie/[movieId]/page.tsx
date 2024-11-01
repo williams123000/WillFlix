@@ -1,14 +1,13 @@
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import NavbarFilm from "./components/NavbarFilm/NavbarFilm";
+
+import { NavbarFilm } from "./components/NavbarFilm";
 import { MovieVideo } from "./components/MovieVideo";
 
 export default async function MovieIdPage({
   params,
 }: {
-  params: {
-    movieId: string;
-  };
+  params: { movieId: string };
 }) {
   const movieFilm = await db.movie.findUnique({
     where: {
@@ -40,8 +39,8 @@ export default async function MovieIdPage({
 
   return (
     <div className="h-screen w-full bg-black">
-        <NavbarFilm titleMovie={titleMovie}/>
-        <MovieVideo currentMovie={currentMovie}/>
+      <NavbarFilm titleMovie={titleMovie} />
+      <MovieVideo currentMovie={currentMovie} />
     </div>
   );
 }

@@ -1,1 +1,1 @@
-export *from "./CarouselMovie"
+export * from "./CarouselMovie";

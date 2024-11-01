@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import { FormAddProfileProps } from "./FormAddProfile.types";
-import { formSchema } from "./FormAddProfile.forms";
+import { formSchema } from "./FormAddProfile.form";
 import { dataProfilesImages } from "./FormAddProfile.data";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

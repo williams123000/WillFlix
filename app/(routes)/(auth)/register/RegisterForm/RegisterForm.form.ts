@@ -6,11 +6,11 @@ export const formSchema = z
       message: "Email is too short",
     }),
     password: z.string().min(2, {
-      message: "Password is too short",
+      message: "Email is too short",
     }),
     repeatPassword: z.string(),
   })
   .refine((data) => data.password === data.repeatPassword, {
-    message: "Passwords must match",
+    message: "The passwords must match",
     path: ["repeatPassword"],
   });

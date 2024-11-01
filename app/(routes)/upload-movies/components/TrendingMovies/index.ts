@@ -1,1 +1,1 @@
-export *from './TrendingMovies';
+export * from "./TrendingMovies";

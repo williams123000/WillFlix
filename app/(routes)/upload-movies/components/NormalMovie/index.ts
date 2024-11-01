@@ -1,1 +1,1 @@
-export *from './NormalMovie';
+export * from "./NormalMovie";

@@ -1,11 +1,15 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { ProfileProps } from "./Profiles.types";
-import AddProfile from "./AddProfile/AddProfile";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
 
+import Image from "next/image";
+import axios from "axios";
+import { useState } from "react";
+import { Trash2 } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+import { toast } from "@/hooks/use-toast";
+
+import { Button } from "@/components/ui/button";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,18 +21,15 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-import { Trash2 } from "lucide-react";
-import { toast } from "@/hooks/use-toast";
-import axios from "axios";
+import { ProfilesProps } from "./Profiles.types";
+import { AddProfile } from "./AddProfile";
 import { useRouter } from "next/navigation";
 import { useCurrentNetflixUser } from "@/hooks/use-current-user";
 import { UserNetflix } from "@prisma/client";
 
-export function Profiles(props: ProfileProps) {
+export function Profiles(props: ProfilesProps) {
   const { users } = props;
-
-  const {changeCurrentUser, currentUser} = useCurrentNetflixUser();
-  console.log(currentUser);
+  const { changeCurrentUser } = useCurrentNetflixUser();
 
   const [manageProfiles, setManageProfiles] = useState(false);
   const router = useRouter();
@@ -36,24 +37,28 @@ export function Profiles(props: ProfileProps) {
   const onClickUser = (user: UserNetflix) => {
     changeCurrentUser(user);
     router.push("/");
-  }
+  };
 
   const deleteUser = async (userIdNetflix: string) => {
-    try{
+    try {
       axios.delete("/api/userNetflix", { data: { userIdNetflix } });
       setManageProfiles(false);
       router.refresh();
-    }catch(error){
+    } catch (error) {
       console.log(error);
       toast({ title: "Ops! Ha ocurrido un error", variant: "destructive" });
     }
-  }
+  };
 
   return (
     <div>
       <div className="flex gap-7">
         {users.map((user) => (
-          <div key={user.id} className="text-center relative cursor-pointer " onClick={() => onClickUser(user)}>
+          <div
+            key={user.id}
+            className="text-center relative cursor-pointer"
+            onClick={() => onClickUser(user)}
+          >
             <Image
               src={user.avatarUrl || ""}
               alt={`Profile Image ${user.profileName}`}
@@ -67,6 +72,7 @@ export function Profiles(props: ProfileProps) {
             <p className="mt-2 text-gray-500 uppercase text-lg">
               {user.profileName}
             </p>
+
             <div
               className={cn(
                 "top-14 cursor-pointer w-full flex gap-4 items-center justify-center z-20",

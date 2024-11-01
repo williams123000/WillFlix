@@ -1,19 +1,22 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { BellRing, Search } from "lucide-react";
-import { Logo } from "../../Logo";
-import { itemsNavbar } from "@/data/itemsNavbar";
 import Link from "next/link";
+import { BellRing, Search } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+import { itemsNavbar } from "@/data/itemsNavbar";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
+
+import { SelectorProfile } from "@/components/Shared/SelectorProfile";
+import { Logo } from "@/components/Shared/Logo";
+
 import { NavbarDesktopProps } from "./NavbarDesktop.types";
-import { SelectorProfile } from "../../SelectorProfile";
 
 export function NavbarDesktop(props: NavbarDesktopProps) {
   const { users } = props;
   const scrollPosition = useScrollPosition();
 
-  
   return (
     <div
       className={cn(
@@ -27,21 +30,21 @@ export function NavbarDesktop(props: NavbarDesktopProps) {
             <Logo />
             <div className="ml-10 flex gap-4">
               {itemsNavbar.map((item) => (
-                <Link 
-                  key={item.name} 
-                  href={item.link} 
+                <Link
+                  key={item.name}
+                  href={item.link}
                   className="hover:text-gray-300 transition-all duration-300"
-                  >
+                >
                   {item.name}
                 </Link>
               ))}
             </div>
           </div>
           <div className="flex gap-4 items-center">
-            <Search className="cursor-pointer"/>
-            <BellRing className="cursor-pointer"/>
+            <Search className="cursor-pointer" />
+            <BellRing className="cursor-pointer" />
             <div className="flex gap-2 items-center">
-              <SelectorProfile users={users}/>
+              <SelectorProfile users={users} />
             </div>
           </div>
         </div>

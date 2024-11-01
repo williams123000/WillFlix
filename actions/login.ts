@@ -7,8 +7,9 @@ import { z } from "zod";
 
 export const login = async (values: z.infer<typeof signInSchema>) => {
   const validatedFields = signInSchema.safeParse(values);
+
   if (!validatedFields.success) {
-    return { error: "Invalid fields" };
+    return { error: "Invalid fields!" };
   }
 
   const { email, password } = validatedFields.data;
@@ -20,14 +21,14 @@ export const login = async (values: z.infer<typeof signInSchema>) => {
       redirectTo: "/profiles",
     });
     return { success: true };
-    
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
-          return { error: "Invalid credentials" };
+          return { error: "Invalid credentials!" };
+
         default:
-          return { error: "An error ocurred" };
+          return { error: "Something went wrong!" };
       }
     }
   }

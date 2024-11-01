@@ -1,1 +1,1 @@
-export *from "./NavbarFilm"
+export * from "./NavbarFilm";

@@ -1,6 +1,6 @@
 import { Movie } from "@prisma/client";
 
 export type CarouselMovieProps = {
-    movies: Movie[]
-    isMyList: boolean
+  movies: Movie[];
+  isMyList: boolean;
 };

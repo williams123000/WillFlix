@@ -1,1 +1,1 @@
-export *from "./SelectorProfile";
+export * from "./SelectorProfile";

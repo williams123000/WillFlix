@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { TrendingMoviesProps } from "./TrendingMovies.types";
-import {InfoExtraFilm} from "./InfoExtraFilm";
+import { InfoExtraFilm } from "./InfoExtraFilm";
 
 export function TrendingMovies(props: TrendingMoviesProps) {
   const { movies } = props;
@@ -8,7 +8,7 @@ export function TrendingMovies(props: TrendingMoviesProps) {
   return (
     <div className="pt-11 md:pt-0 md:-top-24 lg:-top-28 relative px-[4%]">
       <h3 className="text-2xl font-semibold mb-3">
-        Las series más populares hoy en este país
+        Las películas más populares hoy
       </h3>
 
       <div>

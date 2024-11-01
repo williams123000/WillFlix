@@ -1,5 +1,5 @@
-import { PopularMovie } from "@prisma/client"
+import { PopularMovie } from "@prisma/client";
 
-export  type TrendingMoviesProps = {
-    movies: PopularMovie[]
-}
+export type TrendingMoviesProps = {
+  movies: PopularMovie[];
+};

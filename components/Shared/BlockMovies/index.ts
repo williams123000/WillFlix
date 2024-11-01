@@ -1,1 +1,1 @@
-export *from "./BlockMovies";
+export * from "./BlockMovies";

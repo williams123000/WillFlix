@@ -1,1 +1,1 @@
-export *from './ActionsButtonsFilm';
+export * from "./ActionsButtonsFilm";
