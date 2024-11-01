@@ -20,7 +20,7 @@ export function CarouselMovie(props: CarouselMovieProps) {
 
   return (
     <Carousel className="w-full">
-      <CarouselContent className="-ml-1 gap-2 overflow-inherit ">
+      <CarouselContent className="-ml-1 gap-2 scrollbar-hide">
         {movies.map((movie) => (
           <CarouselItem
             key={movie.id}
