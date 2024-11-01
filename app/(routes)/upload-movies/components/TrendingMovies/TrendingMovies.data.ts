@@ -1,5 +1,3 @@
-import { title } from "process";
-
 export const trendingMovies = [
   {
     title: "Deadpool 3",
