@@ -17,9 +17,9 @@ export default async function ProfilePage() {
   });
 
   return (
-    <div className="h-full flex flex-col justify-center items-center bg-zinc-900">
+    <div className="h-full flex flex-col md:justify-center items-center bg-zinc-900">
       <div>
-        <h1 className="text-5xl mb-8">¿Quién eres? Elige tu perfil</h1>
+        <h1 className="text-3xl md:text-5xl mt-16 md:mt-0 mb-8">¿Quién eres? Elige tu perfil</h1>
       </div>
 
       <Profiles users={userNetflix} />

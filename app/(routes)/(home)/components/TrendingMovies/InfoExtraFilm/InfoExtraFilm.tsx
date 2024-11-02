@@ -14,7 +14,7 @@ export function InfoExtraFilm(props: InfoExtraFilmProps) {
 
   return (
     <div
-      className="opacity-0 absolute top-0 transition-all duration-300 z-10
+      className=" opacity-0 absolute top-0 transition-all duration-300 z-10
   invisible sm:visible delay-300 w-full bg-zinc-900 rounded-lg scale-0 
   group-hover:lg:scale-150 group-hover:md:scale-150  
   group-hover:-translate-y-[5vw]

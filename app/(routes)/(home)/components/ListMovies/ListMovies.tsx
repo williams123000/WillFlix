@@ -16,7 +16,7 @@ export function ListMovies(props: ListMoviesProps) {
   const lovedFilms = userNetflix ? lovedFilmsByUser[userNetflix] : [];
 
   return (
-    <div>
+    <div >
       <BlockMovies
         title="Películas favoritas"
         movies={lovedFilms}

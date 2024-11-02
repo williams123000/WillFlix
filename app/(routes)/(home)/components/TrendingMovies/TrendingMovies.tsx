@@ -15,30 +15,30 @@ export function TrendingMovies(props: TrendingMoviesProps) {
       </h3>
 
       <div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid sm:grid-cols-1 md:grid-cols-5 gap-4">
           {movies.map((movie) => (
             <div
               key={movie.id}
-              className="flcursor-pointer transition delay-300 hover:h-[14vh] group relative"
+              className="flex cursor-pointer transition delay-300  group relative"
             >
               <div
-                className="flex transition duration 
-              group-hover:opacity-90 delay-300 w-full justify-center"
-              onClick={() => router.push(`/movie/${movie.id}`)}             >
+                className="flex md:transition md:duration 
+              md:group-hover:opacity-90 md:delay-300 w-full justify-center"
+                onClick={() => router.push(`/movie/${movie.id}`)}
+              >
                 <Image
                   src={`https://raw.githubusercontent.com/ratasi/images-netflix-clone/refs/heads/main/ranking/${movie.ranking}.png`}
                   alt="Number"
                   width={116}
                   height={150}
-                  className="h-auto w-auto lg:max-h-full"
+                  className="object-contain	 w-auto md:max-h-[180px] lg:max-h-full"
                 />
                 <Image
                   src={movie.thumbnailUrl}
                   alt="Image"
                   width={116}
                   height={150}
-                  className="h-auto w-auto md:max-h-[180px] lg:max-h-full"
-                  
+                  className=" md:max-h-[180px] lg:max-h-full"
                 />
               </div>
               <InfoExtraFilm movie={movie} />

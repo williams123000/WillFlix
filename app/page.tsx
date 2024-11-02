@@ -34,6 +34,7 @@ export default async function Home() {
       <SliderVideo />
       <TrendingMovies movies={trendingMovies} />
       <ListMovies movies={movies} />
+      
     </div>
   );
 }

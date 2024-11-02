@@ -11,6 +11,7 @@ export function SliderVideo() {
         muted
         className="brightness-50 object-fill w-full h-[80vw] md:h-[56.25vw] lg:h-[45vw]"
         src="/videos/video-trailer-test.mp4"
+        controls={false}
       />
       <div
         className="flex flex-col justify-end absolute w-full md:w-[36%] px-4 

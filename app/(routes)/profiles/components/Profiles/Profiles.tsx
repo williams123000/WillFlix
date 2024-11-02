@@ -52,7 +52,7 @@ export function Profiles(props: ProfilesProps) {
 
   return (
     <div>
-      <div className="flex gap-7">
+      <div className="flex gap-7 flex-col md:flex-row items-center ">
         {users.map((user) => (
           <div
             key={user.id}
@@ -109,7 +109,7 @@ export function Profiles(props: ProfilesProps) {
         <AddProfile />
       </div>
 
-      <div className="mt-16 flex items-center justify-center">
+      <div className="mt-16 md:mb-0 mb-16 flex items-center justify-center">
         <Button
           variant="outline"
           size="lg"

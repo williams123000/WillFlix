@@ -35,7 +35,7 @@ export function LoginForm() {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      login(values).then((data) => {
+      await login(values).then((data) => {
         setError(data?.error);
         if (data?.success) {
           toast({
