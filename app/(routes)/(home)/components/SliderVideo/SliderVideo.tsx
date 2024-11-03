@@ -1,23 +1,21 @@
 import { Info, Play } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 
 export function SliderVideo() {
   return (
-    <div className="relative w-full -[80vw] md:h-[56.25vw] lg:h-[45vw]">
+    <div className="relative w-full h-[80vw] md:h-[56.25vw] lg:h-[45vw]">
       <video
         autoPlay
         loop
         muted
-        className="brightness-50 object-fill w-full h-[80vw] md:h-[56.25vw] lg:h-[45vw]"
-        src="/videos/video-trailer-test.mp4"
+        playsInline
+        className="brightness-50 object-cover w-full h-full"
+        src="/videos/video-3.mp4"
         controls={false}
+        poster="/videos/video-3-poster.jpg"
+        preload="auto"
       />
-      <div
-        className="flex flex-col justify-end absolute w-full md:w-[36%] px-4 
-        md:px-0 md:left-[4%] z-20 top-0 -bottom-7 md:bottom-[36%]
-      "
-      >
+      <div className="flex flex-col justify-end absolute w-full md:w-[36%] px-4 md:px-0 md:left-[4%] z-20 top-0 -bottom-7 md:bottom-[36%]">
         <div className="pt-24 md:pt-0">
           <h2 className="text-2xl md:text-5xl lg:text-8xl font-bold drop-shadow-xl">
             FLIXWILL
@@ -39,11 +37,7 @@ export function SliderVideo() {
         </div>
       </div>
 
-      <div
-        className="bg-transparent bg-no-repeat bg-contain w-full opacity-100 top-auto h-[14.7vw] 
-      -bottom-16 absolute bg-gradient-video
-      "
-      />
+      <div className="bg-transparent bg-no-repeat bg-contain w-full opacity-100 top-auto h-[14.7vw] -bottom-16 absolute bg-gradient-video" />
     </div>
   );
 }

@@ -87,9 +87,9 @@ export const trendingMovies = [
     title: "Sonríe 2",
     thumbnailUrl:
       "https://raw.githubusercontent.com/williams123000/images-netflix-clone/refs/heads/main/trending/trending-8.jpg",
-    trailerVideo: "https://www.youtube.com/watch?v=Qssx0cl_lDQ",
+    trailerVideo: "https://www.youtube.com/watch?v=Qssx0cl_lDQ&t=1s",
     movieVideo:
-      "https://drive.google.com/file/d/1uDwW4QETr6iZhU4rBGVSHwrCtNpv0g3i/view",
+      "https://drive.google.com/file/d/1Qs-MGOCR-r7XgbwwSfEamXPXUBJWgY9b/view",
     ranking: 8,
     age: "18",
     duration: "125 min",
