@@ -41,8 +41,10 @@ export function Profiles(props: ProfilesProps) {
 
   const deleteUser = async (userIdNetflix: string) => {
     try {
-      axios.delete("/api/userNetflix", { data: { userIdNetflix } });
+      // Agrega await aquí para esperar la finalización de la eliminación
+      await axios.delete("/api/userNetflix", { data: { userIdNetflix } });
       setManageProfiles(false);
+      // Actualiza la página después de que la eliminación haya terminado
       router.refresh();
     } catch (error) {
       console.log(error);
@@ -57,7 +59,9 @@ export function Profiles(props: ProfilesProps) {
           <div
             key={user.id}
             className="text-center relative cursor-pointer"
-            onClick={() => onClickUser(user)}
+            onClick={() => {
+              if (!manageProfiles) onClickUser(user);
+            }}
           >
             <Image
               src={user.avatarUrl || ""}
@@ -81,7 +85,10 @@ export function Profiles(props: ProfilesProps) {
             >
               <AlertDialog>
                 <AlertDialogTrigger asChild>
-                  <div className="bg-white rounded-full hover:bg-red-100 p-1">
+                  <div
+                    className="bg-white rounded-full hover:bg-red-100 p-1"
+                    onClick={(event) => event.stopPropagation()}
+                  >
                     <Trash2 className="w-6 h-6 text-red-500" />
                   </div>
                 </AlertDialogTrigger>

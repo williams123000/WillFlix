@@ -11,4 +11,10 @@ export const dataProfilesImages = [
   {
     urlImage: "/profiles/profile-4.png",
   },
+  {
+    urlImage: "/profiles/profile-5.png",
+  },
+  {
+    urlImage: "/profiles/profile-6.png",
+  }
 ];

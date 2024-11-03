@@ -82,5 +82,17 @@ export const trendingMovies = [
     age: "18",
     duration: "125 min",
     genre: ["Terrifying", "Horror"],
+  },
+  {
+    title: "Sonríe 2",
+    thumbnailUrl:
+      "https://raw.githubusercontent.com/williams123000/images-netflix-clone/refs/heads/main/trending/trending-8.jpg",
+    trailerVideo: "https://www.youtube.com/watch?v=Qssx0cl_lDQ",
+    movieVideo:
+      "https://drive.google.com/file/d/1uDwW4QETr6iZhU4rBGVSHwrCtNpv0g3i/view",
+    ranking: 8,
+    age: "18",
+    duration: "125 min",
+    genre: ["Terrifying", "Horror"],
   }
 ];

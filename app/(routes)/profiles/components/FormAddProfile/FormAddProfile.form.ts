@@ -7,5 +7,7 @@ export const formSchema = z.object({
     "/profiles/profile-2.png",
     "/profiles/profile-3.png",
     "/profiles/profile-4.png",
+    "/profiles/profile-5.png",
+    "/profiles/profile-6.png",
   ]),
 });
