@@ -27,7 +27,7 @@ export function TrendingMovies(props: TrendingMoviesProps) {
                 onClick={() => router.push(`/movie/${movie.id}`)}
               >
                 <Image
-                  src={`https://raw.githubusercontent.com/ratasi/images-netflix-clone/refs/heads/main/ranking/${movie.ranking}.png`}
+                  src={`https://raw.githubusercontent.com/williams123000/images-netflix-clone/refs/heads/main/ranking/${movie.ranking}.png`}
                   alt="Number"
                   width={116}
                   height={150}
