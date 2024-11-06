@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "WillFlix | Netflix Clone",
-  description: "Creando un clone de Netflix con TarreDev",
+  description: "Plataforma de streaming de películas y series.",
 };
 
 export default function RootLayout({
