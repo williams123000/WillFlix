@@ -7,6 +7,27 @@ const ReactPlayer = dynamic(() => import("react-player"), {
   ssr: false,
 });
 
+// Definición de tipos para las APIs de pantalla completa
+interface FullscreenElement extends Element {
+  webkitRequestFullscreen?: () => Promise<void>;
+  mozRequestFullScreen?: () => Promise<void>;
+  msRequestFullscreen?: () => Promise<void>;
+}
+
+interface FullscreenDocument extends Document {
+  webkitFullscreenElement?: Element | null;
+  mozFullScreenElement?: Element | null;
+  msFullscreenElement?: Element | null;
+  webkitExitFullscreen?: () => Promise<void>;
+  mozCancelFullScreen?: () => Promise<void>;
+  msExitFullscreen?: () => Promise<void>;
+}
+
+// Tipo para el evento del menú contextual
+interface VideoContextMenuEvent extends Event {
+  preventDefault(): void;
+}
+
 export function MovieVideo(props: MovieVideoProps) {
   const { currentMovie } = props;
   const [videoUrl, setVideoUrl] = useState<string>(currentMovie);
@@ -17,7 +38,7 @@ export function MovieVideo(props: MovieVideoProps) {
       if (url.includes('drive.google.com')) {
         const fileId = url.match(/\/d\/([^/]+)/)?.[1];
         if (fileId) {
-          return `https://drive.google.com/file/d/${fileId}/preview?usp=drivesdk&modestbranding=1&rel=0&showinfo=0`;
+          return `https://drive.google.com/file/d/${fileId}/preview?usp=drivesdk&embedded=true&modestbranding=1&rel=0&showinfo=0`;
         }
       }
       return url;
@@ -26,42 +47,42 @@ export function MovieVideo(props: MovieVideoProps) {
     setVideoUrl(convertGoogleDriveUrl(currentMovie));
   }, [currentMovie]);
 
-  // Función para detectar el soporte de pantalla completa
   const checkFullscreenSupport = useCallback(() => {
-    const elem = document.documentElement;
+    const elem = document.documentElement as FullscreenElement;
     return !!(
       elem.requestFullscreen ||
-      (elem as any).webkitRequestFullscreen ||
-      (elem as any).mozRequestFullScreen ||
-      (elem as any).msRequestFullscreen
+      elem.webkitRequestFullscreen ||
+      elem.mozRequestFullScreen ||
+      elem.msRequestFullscreen
     );
   }, []);
 
-  // Función para entrar/salir de pantalla completa
   const toggleFullscreen = useCallback(async () => {
-    const container = document.querySelector('.video-container');
+    const container = document.querySelector('.video-container') as FullscreenElement;
+    const doc = document as FullscreenDocument;
+    
     if (!container) return;
 
     try {
       if (!isFullscreen) {
         if (container.requestFullscreen) {
           await container.requestFullscreen();
-        } else if ((container as any).webkitRequestFullscreen) {
-          await (container as any).webkitRequestFullscreen();
-        } else if ((container as any).mozRequestFullScreen) {
-          await (container as any).mozRequestFullScreen();
-        } else if ((container as any).msRequestFullscreen) {
-          await (container as any).msRequestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+          await container.webkitRequestFullscreen();
+        } else if (container.mozRequestFullScreen) {
+          await container.mozRequestFullScreen();
+        } else if (container.msRequestFullscreen) {
+          await container.msRequestFullscreen();
         }
       } else {
-        if (document.exitFullscreen) {
-          await document.exitFullscreen();
-        } else if ((document as any).webkitExitFullscreen) {
-          await (document as any).webkitExitFullscreen();
-        } else if ((document as any).mozCancelFullScreen) {
-          await (document as any).mozCancelFullScreen();
-        } else if ((document as any).msExitFullscreen) {
-          await (document as any).msExitFullscreen();
+        if (doc.exitFullscreen) {
+          await doc.exitFullscreen();
+        } else if (doc.webkitExitFullscreen) {
+          await doc.webkitExitFullscreen();
+        } else if (doc.mozCancelFullScreen) {
+          await doc.mozCancelFullScreen();
+        } else if (doc.msExitFullscreen) {
+          await doc.msExitFullscreen();
         }
       }
     } catch (error) {
@@ -69,14 +90,15 @@ export function MovieVideo(props: MovieVideoProps) {
     }
   }, [isFullscreen]);
 
-  // Listener para cambios en el estado de pantalla completa
   useEffect(() => {
+    const doc = document as FullscreenDocument;
+    
     const handleFullscreenChange = () => {
       setIsFullscreen(!!(
-        document.fullscreenElement ||
-        (document as any).webkitFullscreenElement ||
-        (document as any).mozFullScreenElement ||
-        (document as any).msFullscreenElement
+        doc.fullscreenElement ||
+        doc.webkitFullscreenElement ||
+        doc.mozFullScreenElement ||
+        doc.msFullscreenElement
       ));
     };
 
@@ -128,7 +150,7 @@ export function MovieVideo(props: MovieVideoProps) {
                 controlsList: 'nodownload',
                 playsInline: true,
                 webkitPlaysInline: true,
-                onContextMenu: (e: any) => e.preventDefault(),
+                onContextMenu: (e: VideoContextMenuEvent) => e.preventDefault(),
               },
             },
           }}
