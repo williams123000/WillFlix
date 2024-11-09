@@ -252,4 +252,26 @@ export const dataMovies = [
     duration: "1h 31 min",
     age: "0",
   },
+  {
+    title: "Casi el Paraiso",
+    trailerVideo: "https://www.youtube.com/watch?v=Q1wKZLr1g1c",
+    movieVideo:
+      "https://drive.google.com/file/d/1ZPl3wbV2Gi02IuqA7UNGgGozYLFwzrYV/view",
+    thumbnailUrl:
+      "https://raw.githubusercontent.com/williams123000/images-netflix-clone/refs/heads/main/movies/movie-24.jpg",
+    genre: ["Drama", "Family", "Action"],
+    duration: "1h 31 min",
+    age: "0",
+  },
+  {
+    title: "Romper el circulo",
+    trailerVideo: "https://www.youtube.com/watch?v=Q1wKZLr1g1c",
+    movieVideo:
+      "https://drive.google.com/file/d/1HVW2cY-GXsKnOCpC_w4OxEWy0aqKgDuG/view",
+    thumbnailUrl:
+      "https://raw.githubusercontent.com/williams123000/images-netflix-clone/refs/heads/main/movies/movie-25.jpg",
+    genre: ["Drama", "Family", "Action"],
+    duration: "1h 31 min",
+    age: "0",
+  }
 ];
